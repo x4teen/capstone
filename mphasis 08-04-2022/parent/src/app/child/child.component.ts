@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css'],
   inputs:['pdata'],
+  outputs:['cevent'],
 })
 export class ChildComponent implements OnInit {
 
@@ -14,5 +15,12 @@ export class ChildComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  cevent=new EventEmitter<string>();
+
+  onchange(value:string){
+    this.cevent.emit(value);
+  }
+
 
 }
