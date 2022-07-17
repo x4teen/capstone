@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import{HttpClient} from '@angular/common/http'
+import{HttpClient, HttpHeaders} from '@angular/common/http'
 import { Observable, observable } from 'rxjs';
 import { UserClass } from './UserClass';
 
@@ -18,4 +18,18 @@ export class DataServiceService {
   getAllUser():Observable<UserClass[]>{
       return this.http.get<UserClass[]>(this.url);
   }
+
+   
+
+   
+  deletePost(id:number) {
+    let endPoints = id;
+    this.http.delete(this.url + endPoints).subscribe(data => {
+       return this.getAllUser();
+    });
+  }
+  
+
+
+   
 }
