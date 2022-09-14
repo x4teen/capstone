@@ -15,13 +15,13 @@ export class DataServiceService {
   //inject the DI
   constructor(private http: HttpClient) { }
 
+
+  //get all users
   getAllUser():Observable<UserClass[]>{
       return this.http.get<UserClass[]>(this.url);
   }
 
-   
-
-   
+  //delete user by id
   deletePost(id:number) {
     let endPoints = id;
     this.http.delete(this.url + endPoints).subscribe(data => {

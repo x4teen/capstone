@@ -42,13 +42,29 @@
     </div>
     
     <label style="font-size: 50px;"> Latest Movies</label>
-    <div class="row">
-      <div class="col-md-6">
-        <img class="d-block w-100" src="./assets/kartikeya.jpg" style="height: 500px; width: 600px;"/>
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row" style="padding-right: 20px;" >
+             
+            <img class="d-block w-100" src="./assets/kartikeya.jpg" style="height: 500px; width: 600px;"/>
+             
+              <button type="button" class="btn btn-primary" style="height: fit-content; width:  600px;"(click)="btnClick();"><i class="fa fa-ticket"></i> BOOK NOW</button>    
+            
+          </div>
+          
+        </div>
+        
+        <div class="col-md-6">
+          <div class="row " >
+             <img class="d-block w-100" src="./assets/rrr.jpg" style="height: 500px; width: 600px;"/>
+             <button type="button" class="btn btn-primary" style="height: fit-content; width:  600px;"(click)="btnClick();"><i class="fa fa-ticket"></i> BOOK NOW</button>    
+            
+            </div>
+        </div>
       </div>
-      <div class="col-md-6">
-        <img class="d-block w-100" src="./assets/rrr.jpg" style="height: 500px; width: 600px;"/>
-      </div>
+      
     </div>
     
     <!--Footer-->
