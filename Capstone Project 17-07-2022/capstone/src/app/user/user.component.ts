@@ -12,7 +12,6 @@ export class UserComponent implements OnInit {
 
    
   allbooks:Observable<UserClass[]>;
-  
 
   //inject the service
   constructor(private service:DataServiceService) { }
