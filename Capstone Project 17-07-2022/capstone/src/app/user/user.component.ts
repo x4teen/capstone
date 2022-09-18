@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { DataServiceService } from '../data-service.service';
 import { UserClass } from '../UserClass';
@@ -14,7 +15,7 @@ export class UserComponent implements OnInit {
   allbooks:Observable<UserClass[]>;
 
   //inject the service
-  constructor(private service:DataServiceService) { }
+  constructor(private router:Router, private service:DataServiceService) { }
 
   users:UserClass[];
 
@@ -23,22 +24,21 @@ export class UserComponent implements OnInit {
      this.getsoftBooks();
      
   }
-
-   
-
-
-
   getsoftBooks(){
     this.service.getAllUser().subscribe(result=>this.users=result);
-    
-     
   }
     
   BookDelete(id:number){
        this.service.deletePost(id);
        console.log("user deleted");  
+       this.onReload();
   }
 
+  onReload(){
+    this.router.navigate(['/users']);
+    this.ngOnInit(); 
+  }
+  
   
    
 }
